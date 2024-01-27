@@ -1,4 +1,3 @@
-
 import productsApi  from "../services/productsApi.js";
 
 const productsController = {
@@ -7,17 +6,18 @@ const productsController = {
         
         const { data } = await productsApi.get("/"); 
         if(!data){
-            return response.status(400).json({err: "Não foi possível carregar os dados"});
+            return response.status(400).json({err: "Loading data error"});
         };
 
         return response.json(data);
     },
 
     show: async (request, response) => {
-        const {idProducts} = request.params;
-        const products = await productsApi.get(idProducts); 
 
-        response.json({products});
+        const { id } = request.params;
+        const products = await productsApi.get(`/${id}`); 
+
+        return response.json({products});
     },
 }
 
