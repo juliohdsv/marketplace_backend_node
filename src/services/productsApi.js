@@ -1,8 +1,8 @@
 import axios from "axios";
 
 const productsApi = axios.create({
-  baseURL: "https://fakestoreapi.com/products/",
+  baseURL: "https://fakestoreapi.com/products",
   timeout: 5000
 }) 
 
-module.exports = productsApi;
+export default productsApi;

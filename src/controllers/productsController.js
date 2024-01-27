@@ -1,20 +1,24 @@
 
-import productApi from "../services/productApi.js";
+import productsApi  from "../services/productsApi.js";
 
 const productsController = {
 
     index: async (request, response) => {
-        const products = await productApi.get(); 
+        
+        const { data } = await productsApi.get("/"); 
+        if(!data){
+            return response.status(400).json({err: "Não foi possível carregar os dados"});
+        };
 
-        response.json({products});
+        return response.json(data);
     },
 
     show: async (request, response) => {
         const {idProducts} = request.params;
-        const products = await productApi.get(idProducts); 
+        const products = await productsApi.get(idProducts); 
 
         response.json({products});
     },
 }
 
-module.exports = productsController;
+export default productsController;

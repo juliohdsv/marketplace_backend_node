@@ -5,4 +5,4 @@ const cepRouter = Router();
 
 cepRouter.get("/:codigo", cepController.show);
 
-module.exports = cepRouter;
+export default cepRouter;

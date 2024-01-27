@@ -6,4 +6,4 @@ const productsRouter = Router();
 productsRouter.get('/', productsController.index);
 productsRouter.get('/:id', productsController.show);
 
-module.exports = productsRouter;
+export default productsRouter;
