@@ -9,15 +9,19 @@ const productsController = {
             return response.status(400).json({err: "Loading data error"});
         };
 
-        return response.json(data);
+        return response.status(200).json(data);
     },
 
     show: async (request, response) => {
 
         const { id } = request.params;
-        const products = await productsApi.get(`/${id}`); 
+        const { data } = await productsApi.get(`/${id}`); 
 
-        return response.json({products});
+        if(!data){
+            return response.status(400).json({err: "Loading data error"});
+        };
+
+        return response.status(200).json(data);
     },
 }
 
