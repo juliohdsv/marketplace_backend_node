@@ -1,4 +1,4 @@
-<h1 style="color: #fff;">Fake Store</h1>
+<h1 style="color: #fff;">Marketplace Fake Store</h1>
 <em style="color: #00ff00;">Back-End</em>
 
 ## Web site for public api
