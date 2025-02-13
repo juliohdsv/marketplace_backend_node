@@ -1,5 +1,6 @@
 import { Product } from "../entities/Product.entitie"
 
 export interface IProductRepository{
-  show(): Promise<Product | null> 
+  findById(): Promise<Product | null> 
+  save(): Promise<void>
 }

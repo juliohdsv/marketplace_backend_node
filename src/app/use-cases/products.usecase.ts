@@ -1,7 +1,7 @@
 import { fakeStoreApi } from "../../infra/services/fakeStore.api";
 
 class ProductUseCase{
-  constructor( ){}
+  constructor(){}
 
   async execute(){
     const { data } = await fakeStoreApi.get("/products");
