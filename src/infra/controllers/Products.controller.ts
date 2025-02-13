@@ -1,6 +1,7 @@
 import { Request, Response } from "express";
 import ProductsUsecase from "../../app/use-cases/products.usecase";
 import GetProductUseCase from "../../app/use-cases/getProduct.usecase";
+import CreateProductUsecase from "../../app/use-cases/createProduct.usecases";
 
 class ProductsController{
 
@@ -17,9 +18,10 @@ class ProductsController{
     }
 
     async create(request: Request, response: Response){
-        const { id, title, description, price, image } = request.body;
-        
-        return response.status(201);
+        const { title, description, price, image } = request.body;
+        const product = await CreateProductUsecase({ title, description, price, image });
+
+        return response.status(201).send(product);
     }
 };
 
