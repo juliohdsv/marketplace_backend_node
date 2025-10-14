@@ -1,14 +1,25 @@
 {
   "compilerOptions": {
-    "target": "es2022",
-    "module": "commonjs",
-    "allowJs": true,
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
+    "module": "nodenext",
+    "target": "esnext",
+    "types": [],
+    "baseUrl": "./",
+    "sourceMap": true,
+    "declaration": true,
+    "declarationMap": true,
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
     "strict": true,
-    "useUnknownInCatchVariables": false
-  },
-  "include": [
-    "src/**/*.ts",
-  ],
+    "jsx": "react-jsx",
+    "verbatimModuleSyntax": true,
+    "isolatedModules": true,
+    "noUncheckedSideEffectImports": true,
+    "moduleDetection": "force",
+    "skipLibCheck": true,
+    "noEmit": true,
+    "allowImportingTsExtensions": true,
+    "paths": {
+      "@/*": ["./src/*"],
+    }
+  }
 }

@@ -1,0 +1,6 @@
+@Host = http://localhost:3333
+
+###
+
+GET {{Host}}/products/3
+Content-Type: application/json

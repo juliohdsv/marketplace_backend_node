@@ -1,7 +1,8 @@
-import { app } from "./app";
+import { app } from "./index.ts";
+import { env } from "@/app/env/index.ts";
 
-const PORT: number = Number(process.env.NODE_PORT) || 3000; 
-const ENV: string = process.env.NODE_ENV || "development"; 
+const PORT = env.NODE_PORT;
+const ENV = env.NODE_ENV;
 
 app.listen(
   PORT, ()=>
