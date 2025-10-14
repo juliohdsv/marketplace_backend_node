@@ -1,5 +1,5 @@
 export class ProductNotExistsError extends Error {
   constructor(){
-    super("Product not exists.")
+    super("Product not found.")
   }
 }

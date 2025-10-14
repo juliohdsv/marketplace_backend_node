@@ -1,11 +1,13 @@
-import z, { ZodError } from "zod";
+import { z, ZodError } from "zod";
 import type { Request, Response } from "express";
 import { ProductNotExistsError } from "@/app/errors/product-not-exists-error.ts";
 import { makeFindIdProductUseCase } from "@/app/use-cases/factories/make-find-id-product-usecase.ts";
 
 export async function findIdProductController(request: Request, response: Response){
   try {
-    const schema = z.object({ id: z.coerce.number() })
+    const schema = z.object({
+      id: z.coerce.number().int().min(1)
+    })
     const { id } = schema.parse(request.params);
     const findIdProductUseCase = makeFindIdProductUseCase();
     const { product } = await findIdProductUseCase.execute(id);
