@@ -1,7 +1,7 @@
 import { describe, it, expect } from "vitest";
 import request from "supertest";
 
-import { app } from "@/index.ts";
+import { app } from "./index.ts";
 
 describe("Find id Product (e2e)", ()=> {
 
