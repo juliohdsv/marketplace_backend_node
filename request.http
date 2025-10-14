@@ -2,7 +2,7 @@
 
 ###
 
-GET {{Host}}/products/3
+GET {{Host}}/products/1
 Content-Type: application/json
 
 ###

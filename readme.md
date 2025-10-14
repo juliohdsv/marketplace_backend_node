@@ -1,15 +1,17 @@
 # Backend Marketplace Node
 
-Este é um backend Node.js para uma aplicação de marketplace. Ele fornece uma base de dados em memoria para testar sua API RESTful buscando  dados de produtos.
+Este é um backend Node.js para uma aplicação de marketplace. Ele fornece uma base de dados em memória para testar sua API RESTful buscando dados de produtos.
 
 ## Endpoints
 
 - **GET /products**
   Retorna lista de produtos.
   Parâmetro opcional: `orderBy` (`id`, `title`, `price`, `category`).
+  [Testar em produção](https://marketplace-backend-node.onrender.com/products?orderBy=id)
 
 - **GET /products/:id**
   Retorna detalhes de um produto específico pelo ID.
+  [Testar em produção](https://marketplace-backend-node.onrender.com/products/10)
 
 ## Como executar o servidor
 
