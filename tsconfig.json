@@ -20,6 +20,8 @@
     "allowImportingTsExtensions": true,
     "paths": {
       "@/*": ["./src/*"],
-    }
+    },
+    "include": ["src/**/*.ts"],
+    "exclude": ["**/*.test.ts", "**/*.spec.ts", "vitest.config.ts"]
   }
 }
