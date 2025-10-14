@@ -1,8 +1,8 @@
 import { describe, it, expect, beforeEach, vi } from "vitest";
 
-import { GetProductsUseCase } from "./get-products-usecase.ts";
-import { BadGatwayError } from "../errors/bad-gateway-error.ts";
-import { InMemoryProducts } from "@/infra/repositories/in-memory-products.ts";
+import { GetProductsUseCase } from "./get-products-usecase.js";
+import { BadGatwayError } from "../errors/bad-gateway-error.js";
+import { InMemoryProducts } from "@/infra/repositories/in-memory-products.js";
 
 describe("Get Product Use Case", ()=> {
 

@@ -1,7 +1,7 @@
 import { z, ZodError } from "zod";
 import type { Request, Response } from "express";
-import { ProductNotExistsError } from "@/app/errors/product-not-exists-error.ts";
-import { makeFindIdProductUseCase } from "@/app/use-cases/factories/make-find-id-product-usecase.ts";
+import { ProductNotExistsError } from "@/app/errors/product-not-exists-error.js";
+import { makeFindIdProductUseCase } from "@/app/use-cases/factories/make-find-id-product-usecase.js";
 
 export async function findIdProductController(request: Request, response: Response){
   try {

@@ -1,4 +1,4 @@
-import { BadGatwayError } from "../errors/bad-gateway-error.ts";
+import { BadGatwayError } from "../errors/bad-gateway-error.js";
 import type {
   IProductOutput,
   IProductsRepository

@@ -1,8 +1,8 @@
 import { describe, it, expect, beforeEach } from "vitest";
 
-import { InMemoryProducts } from "@/infra/repositories/in-memory-products.ts";
-import { FindIdProductUseCase } from "./find-id-product-usecase.ts";
-import { ProductNotExistsError } from "../errors/product-not-exists-error.ts";
+import { InMemoryProducts } from "@/infra/repositories/in-memory-products.js";
+import { FindIdProductUseCase } from "./find-id-product-usecase.js";
+import { ProductNotExistsError } from "../errors/product-not-exists-error.js";
 
 describe("Find Id Product Use Case", ()=> {
 

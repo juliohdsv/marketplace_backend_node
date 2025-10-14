@@ -1,8 +1,8 @@
 import z, { ZodError } from "zod";
 import type { Request, Response } from "express";
 
-import { BadGatwayError } from "@/app/errors/bad-gateway-error.ts";
-import { makeGetProductUseCase } from "@/app/use-cases/factories/make-get-product-usecase.ts";
+import { BadGatwayError } from "@/app/errors/bad-gateway-error.js";
+import { makeGetProductUseCase } from "@/app/use-cases/factories/make-get-product-usecase.js";
 
 export async function getProductController(request: Request, response: Response){
   try {

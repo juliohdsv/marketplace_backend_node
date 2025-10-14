@@ -1,4 +1,4 @@
-import { fakeStoreApi } from "../services/fakeStore-api.ts";
+import { fakeStoreApi } from "../services/fakeStore-api.js";
 import type {
   IProductOutput,
   IProductsRepository

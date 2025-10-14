@@ -1,4 +1,4 @@
-import { ProductNotExistsError } from "../errors/product-not-exists-error.ts";
+import { ProductNotExistsError } from "../errors/product-not-exists-error.js";
 import type {
   IProductOutput,
   IProductsRepository
