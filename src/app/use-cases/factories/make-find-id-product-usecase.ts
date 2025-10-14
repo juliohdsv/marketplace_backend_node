@@ -1,5 +1,5 @@
-import { InMemoryProducts } from "@/infra/repositories/in-memory-products.ts"
-import { FindIdProductUseCase } from "../find-id-product-usecase.ts";
+import { InMemoryProducts } from "@/infra/repositories/in-memory-products.js";
+import { FindIdProductUseCase } from "../find-id-product-usecase.js";
 
 export function makeFindIdProductUseCase(){
   const productsrepository = new InMemoryProducts();
