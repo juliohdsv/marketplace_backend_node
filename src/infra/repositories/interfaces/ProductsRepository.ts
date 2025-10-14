@@ -11,6 +11,7 @@ export interface IProductOutput {
   }
 }
 
-export interface IProductRepository {
+export interface IProductsRepository {
   findById(id: number): Promise<IProductOutput>
+  store():Promise<IProductOutput[]>
 }

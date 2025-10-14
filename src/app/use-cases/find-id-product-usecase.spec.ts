@@ -1,16 +1,17 @@
 import { describe, it, expect, beforeEach } from "vitest";
+
 import { InMemoryProducts } from "@/infra/repositories/in-memory-products.ts";
-import { GetProductUseCase } from "./get-product-usecase.ts";
+import { FindIdProductUseCase } from "./find-id-product-usecase.ts";
 import { ProductNotExistsError } from "../errors/product-not-exists-error.ts";
 
-describe("Get Product Use Case", ()=> {
+describe("Find Id Product Use Case", ()=> {
 
-  let productRepository: InMemoryProducts
-  let sut: GetProductUseCase
+  let productsRepository: InMemoryProducts
+  let sut: FindIdProductUseCase
 
   beforeEach(()=>{
-    productRepository = new InMemoryProducts();
-    sut = new GetProductUseCase(productRepository);
+    productsRepository = new InMemoryProducts();
+    sut = new FindIdProductUseCase(productsRepository);
   })
 
   it("Should be able find product with id ", async ()=> {

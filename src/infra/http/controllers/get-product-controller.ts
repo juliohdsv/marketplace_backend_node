@@ -1,23 +1,26 @@
 import z, { ZodError } from "zod";
-import { makeGetProductUseCase } from "@/app/use-cases/factories/make-get-product-usecase.ts";
 import type { Request, Response } from "express";
-import { ProductNotExistsError } from "@/app/errors/product-not-exists-error.ts";
+
+import { BadGatwayError } from "@/app/errors/bad-gateway-error.ts";
+import { makeGetProductUseCase } from "@/app/use-cases/factories/make-get-product-usecase.ts";
 
 export async function getProductController(request: Request, response: Response){
   try {
-    const schema = z.object({ id: z.coerce.number() })
-    const { id } = schema.parse(request.params);
+    const querySchema = z.object({
+      orderBy: z.enum(["title", "price", "category", "id"]).default("title"),
+    });
+    const { orderBy } = querySchema.parse(request.query);
     const getProductUseCase = makeGetProductUseCase();
-    const { product } = await getProductUseCase.execute(id);
+    const { products } = await getProductUseCase.execute({ orderBy });
 
-    return response.status(200).send({ product });
+    return response.status(200).send({ products });
 
   } catch (error) {
     console.error(error)
 
-    if(error instanceof ProductNotExistsError){
+    if(error instanceof BadGatwayError){
       return response
-        .status(404)
+        .status(502)
         .send({ message: "Bad request" })
     }
 

@@ -4,3 +4,9 @@
 
 GET {{Host}}/products/3
 Content-Type: application/json
+
+###
+
+GET {{Host}}/products?orderBy=id
+Content-Type: application/json
+

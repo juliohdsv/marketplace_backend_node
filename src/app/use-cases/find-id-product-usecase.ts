@@ -1,19 +1,19 @@
 import { ProductNotExistsError } from "../errors/product-not-exists-error.ts";
 import type {
   IProductOutput,
-  IProductRepository
-} from "@/infra/repositories/interfaces/ProductRepository.ts";
+  IProductsRepository
+} from "@/infra/repositories/interfaces/ProductsRepository.ts";
 
-interface IGetProductUseCaseResponse {
+interface IFindIdProductUseCaseResponse {
   product: IProductOutput
 }
 
-export class GetProductUseCase {
+export class FindIdProductUseCase {
   constructor(
-    private productsRepository: IProductRepository
+    private productsRepository: IProductsRepository
   ){}
 
-  async execute(id: number): Promise<IGetProductUseCaseResponse>{
+  async execute(id: number): Promise<IFindIdProductUseCaseResponse>{
     const product = await this.productsRepository.findById(id);
 
     if(!product){
