@@ -1,7 +1,6 @@
 import { describe, it, expect, beforeEach, vi } from "vitest";
 
 import { GetProductsUseCase } from "./get-products-usecase.js";
-import { BadGatwayError } from "../errors/bad-gateway-error.js";
 import { InMemoryProducts } from "@/infra/repositories/in-memory-products.js";
 
 describe("Get Product Use Case", ()=> {
@@ -25,6 +24,6 @@ describe("Get Product Use Case", ()=> {
 
     await expect(
       sut.execute({ orderBy: "id" })
-    ).rejects.toBeInstanceOf(BadGatwayError);
+    ).rejects.toBeInstanceOf(Error);
   });
 })

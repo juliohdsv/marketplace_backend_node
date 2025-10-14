@@ -1,7 +1,6 @@
 import z, { ZodError } from "zod";
 import type { Request, Response } from "express";
 
-import { BadGatwayError } from "@/app/errors/bad-gateway-error.js";
 import { makeGetProductUseCase } from "@/app/use-cases/factories/make-get-product-usecase.js";
 
 export async function getProductController(request: Request, response: Response){
@@ -9,6 +8,7 @@ export async function getProductController(request: Request, response: Response)
     const querySchema = z.object({
       orderBy: z.enum(["title", "price", "category", "id"]).default("title"),
     });
+
     const { orderBy } = querySchema.parse(request.query);
     const getProductUseCase = makeGetProductUseCase();
     const { products } = await getProductUseCase.execute({ orderBy });
@@ -17,12 +17,6 @@ export async function getProductController(request: Request, response: Response)
 
   } catch (error) {
     console.error(error)
-
-    if(error instanceof BadGatwayError){
-      return response
-        .status(502)
-        .send({ message: "Bad request" })
-    }
 
     if(error instanceof ZodError){
       return response

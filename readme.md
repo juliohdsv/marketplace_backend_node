@@ -1,6 +1,6 @@
 # Backend Marketplace Node
 
-Este é um backend Node.js para uma aplicação de marketplace. Ele fornece APIs RESTful para buscar dados de produtos de um serviço externo ([FakeStore API](https://fakestoreapi.com)).
+Este é um backend Node.js para uma aplicação de marketplace. Ele fornece uma base de dados em memoria para testar sua API RESTful buscando  dados de produtos.
 
 ## Endpoints
 
@@ -47,6 +47,8 @@ Este é um backend Node.js para uma aplicação de marketplace. Ele fornece APIs
 
 ## Fluxo Principal (Mermaid)
 
+## Fluxo Principal (Mermaid)
+
 ```mermaid
 sequenceDiagram
     participant Usuário
@@ -54,14 +56,14 @@ sequenceDiagram
     participant Controller
     participant CasoDeUso
     participant Repositório
-    participant FakeStoreAPI
+    participant ArrayMemoria
 
     Usuário->>API Express: Requisição HTTP (GET /products ou /products/:id)
     API Express->>Controller: Roteamento e validação
     Controller->>CasoDeUso: Chama caso de uso
     CasoDeUso->>Repositório: Solicita dados
-    Repositório->>FakeStoreAPI: Consulta produtos
-    FakeStoreAPI-->>Repositório: Retorna dados
+    Repositório->>ArrayMemoria: Busca produtos no array em memória
+    ArrayMemoria-->>Repositório: Retorna dados
     Repositório-->>CasoDeUso: Retorna dados
     CasoDeUso-->>Controller: Retorna dados
     Controller-->>API Express: Resposta formatada

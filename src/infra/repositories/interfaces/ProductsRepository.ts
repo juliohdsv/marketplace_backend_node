@@ -1,17 +1,17 @@
+export type IOrderBy = "id" | "title" | "category" | "price";
+
 export interface IProductOutput {
-  id: number
-  title: string
-  price: number
-  description: string
-  category: string
-  image: string
-  rating: {
-    rate: number
-    count: number
-  }
+  id: number;
+  title: string;
+  description: string;
+  category: string;
+  price: number;
+  discountPercentage: number;
+  rating: number;
+  stock: number;
 }
 
 export interface IProductsRepository {
-  findById(id: number): Promise<IProductOutput>
+  findById(id: number): Promise<IProductOutput | null>
   store():Promise<IProductOutput[]>
 }

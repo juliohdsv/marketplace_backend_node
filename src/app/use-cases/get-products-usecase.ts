@@ -1,11 +1,11 @@
-import { BadGatwayError } from "../errors/bad-gateway-error.js";
 import type {
   IProductOutput,
-  IProductsRepository
+  IProductsRepository,
+  IOrderBy
 } from "@/infra/repositories/interfaces/ProductsRepository.ts";
 
 interface IGetProductUseCaseRequest {
-  orderBy: keyof IProductOutput
+  orderBy: IOrderBy
 }
 
 interface IGetProducstUseCaseResponse {
@@ -18,11 +18,10 @@ export class GetProductsUseCase {
   ){}
 
   async execute({ orderBy }: IGetProductUseCaseRequest): Promise<IGetProducstUseCaseResponse>{
-
     const data = await this.productsRepository.store();
 
     if(!data){
-      throw new BadGatwayError()
+      throw new Error()
     }
 
     data.sort((a, b)=> {
@@ -40,10 +39,8 @@ export class GetProductsUseCase {
       return 0;
     })
 
-    const products = data
-
     return {
-      products,
+      products: data
     }
   }
 }

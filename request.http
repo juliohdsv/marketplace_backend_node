@@ -7,6 +7,6 @@ Content-Type: application/json
 
 ###
 
-GET {{Host}}/products?orderBy=id
+GET {{Host}}/products?orderBy=title
 Content-Type: application/json
 
