@@ -47,8 +47,6 @@ Este é um backend Node.js para uma aplicação de marketplace. Ele fornece uma 
 
 ## Fluxo Principal (Mermaid)
 
-## Fluxo Principal (Mermaid)
-
 ```mermaid
 sequenceDiagram
     participant Usuário
