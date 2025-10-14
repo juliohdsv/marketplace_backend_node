@@ -45,7 +45,7 @@ Este é um backend Node.js para uma aplicação de marketplace. Ele fornece APIs
 - **Validação e Tratamento de Erros:** Utiliza Zod para validação e erros personalizados.
 - **Configuração de Ambiente:** Utiliza `.env` para variáveis de ambiente.
 
-## Fluxo Principal
+## Fluxo Principal (Mermaid)
 
 ```mermaid
 sequenceDiagram
