@@ -2,20 +2,20 @@
   "name": "marketplace_backend_node",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
+  "main": "server.ts",
   "type": "module",
   "scripts": {
+    "dev": "tsx --watch ./src/server.ts",
+    "build": "tsup ./src/server.ts --format esm --out-dir dist --splitting=false --clean",
+    "start": "node ./dist/server.js",
     "test": "vitest run",
-    "test:coverage": "vitest run --coverage",
-    "dev": "tsx watch src/server.ts",
-    "build": "tsup src/server.ts --format esm --out-dir dist --splitting=false --clean",
-    "start": "node dist/server.js"
+    "test:coverage": "vitest run --coverage"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/MPK-Marcktplace/MKP.git"
   },
-  "author": "",
+  "author": "Júlio Henrique Vieira",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/MPK-Marcktplace/MKP/issues"
